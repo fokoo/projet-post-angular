@@ -1,0 +1,25 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': loveIts > 0,
+                'list-group-item-danger':  loveIts < 0}">
+
+   
+
+    <p class="text-align"> 
+    	<strong text-size=10px [ngStyle]="{color: getColor()}">{{ title }}</strong> 
+        <em style="padding-left: 60%;"  class="text-muted"> 
+        	{{ created_at | date: 'short'}}
+        </em>
+       
+    </p>   
+
+    <p>  {{ content }}  </p>
+
+   <div style="text-align: left">
+      <button class="btn btn-success"
+              (click)="onAddLoveIts()">I love it</button>
+      &nbsp;
+      <button class="btn btn-danger"
+              (click)="onTakeLoveIts()">I don't love it</button>
+   </div>
+   
+</li>
